@@ -1,7 +1,8 @@
 /* components/SocialMediaIcons.module.css */
 .socialMediaIcons {
     display: flex;
-
+    justify-content: center;
+    gap: 20px;
   }
   
   .socialMediaIcons li {
@@ -55,4 +56,17 @@
   
   .socialMediaIcons li a:before {
     background: #395E7C;
+  }
+
+  @media screen and (max-width: 768px) {
+    .socialMediaIcons {
+      gap: 10px;
+    }
+  
+    .socialMediaIcons li a {
+      width: 60px;
+      height: 60px;
+      border: 3px solid #395E7C;
+    }
+    
   }

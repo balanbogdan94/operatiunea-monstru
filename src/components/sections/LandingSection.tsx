@@ -1,7 +1,12 @@
 import React from 'react';
+import BrandLogo from '../common/Logo';
 
 const LandingSection = () => {
-	return <div></div>;
+	return (
+		<div>
+			<BrandLogo />
+		</div>
+	);
 };
 
 export default LandingSection;

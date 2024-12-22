@@ -1,0 +1,8 @@
+
+.root {
+    background: linear-gradient(to top left, lab(72.9% -7.6 -34.5), lab(79.8% -6.8 -24.2), lab(85.3% -6.2 -15.5), lab(90.2% -5.6 -7.5), lab(94.8% -2.1 0.5)); 
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

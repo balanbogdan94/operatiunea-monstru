@@ -1,0 +1,51 @@
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+.root h2 {
+    font-family: var(--font-montserrat);
+    font-size: 32px;
+    line-height: 36px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.root ul {
+    font-family: var(--font-montserrat);
+    padding-left: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    
+}
+
+.root li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    max-width: 50vw;
+    text-align: center;
+    border: 3px solid #000000;
+    padding:  20px;
+    border-radius: 20px;
+    box-shadow: 0px 12px 12px rgba(0, 0, 0, 0.25);
+}
+
+.root svg {
+
+    font-size: 32px;
+}
+
+
+

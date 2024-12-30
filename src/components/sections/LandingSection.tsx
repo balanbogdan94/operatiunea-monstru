@@ -1,37 +1,39 @@
 'use client';
-import React, { useEffect } from 'react';
+import React from 'react';
 import BrandLogo from '../common/Logo';
 import styles from './LandingSection.module.css';
 import SocialMediaIcons from '../common/SocialMedia';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const LandingSection = () => {
-	const callToActionText = React.useRef(null);
-	const controls = useAnimation();
-	const inView = useInView(callToActionText);
+	// const callToActionText = React.useRef(null);
+	// const controls = useAnimation();
+	// const inView = useInView(callToActionText);
 
-	useEffect(() => {
-		if (inView) {
-			controls.start('hiddenHero');
-			controls.start('visible');
-		} else {
-			controls.start('visibleHero');
-			controls.start('hidden');
-		}
-	}, [controls, inView]);
+	// useEffect(() => {
+	// 	if (inView) {
+	// 		controls.start('hiddenHero');
+	// 		controls.start('visible');
+	// 	} else {
+	// 		controls.start('visibleHero');
+	// 		controls.start('hidden');
+	// 	}
+	// }, [controls, inView]);
 
 	return (
 		<div className={styles.root}>
-			<BrandLogo className={styles.logo} />
+			<motion.div
+				className={styles.logo}
+				initial={{ width: '30%', rotate: 0 }}
+				animate={{ width: '100%', rotate: 360 }}
+				transition={{ duration: 1, type: 'spring', stiffness: 100 }}>
+				<BrandLogo />
+			</motion.div>
 			<motion.div
 				className={styles.landingText}
 				initial={{ opacity: 0 }}
-				animate={controls}
-				variants={{
-					visibleHero: { opacity: 100, y: 0 },
-					hiddenHero: { opacity: 0, y: -20 },
-				}}
-				transition={{ duration: 0.2 }}>
+				animate={{ opacity: 1 }}
+				transition={{ duration: 1 }}>
 				<h1 id='scrollText'>Operatiunea Monstrul</h1>
 				<h2>
 					Magazinul tau de pescuit si outdoor din{' '}
@@ -42,13 +44,8 @@ const LandingSection = () => {
 			<motion.div
 				className={styles.callToAction}
 				initial={{ opacity: 0 }}
-				animate={controls}
-				ref={callToActionText}
-				variants={{
-					visible: { opacity: 1, y: 0 },
-					hidden: { opacity: 0, y: 100 },
-				}}
-				transition={{ duration: 0.2 }}>
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 1 }}>
 				<h2>
 					Fă din fiecare ieșire pe{' '}
 					<span className={styles.highlightText}>apă</span> o aventură{' '}

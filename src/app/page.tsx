@@ -22,16 +22,8 @@ export default function Home() {
 	return (
 		<div className={styles.page}>
 			<main className={styles.main}>
-				<motion.div
-					initial={{ opacity: 1 }}
-					animate={controls}
-					variants={{
-						visible: { opacity: 0 },
-						hidden: { opacity: 1 },
-					}}
-					transition={{ duration: 0.2 }}>
-					<LandingSection />
-				</motion.div>
+				<LandingSection />
+
 				<motion.div
 					ref={advantageSection}
 					initial={{ opacity: 0 }}
@@ -42,9 +34,8 @@ export default function Home() {
 					}}
 					transition={{ duration: 0.2 }}>
 					<AdvantagesSection />
-					<ContactSection />
 				</motion.div>
-				{/* <motion.div
+				<motion.div
 					className={styles.contact}
 					initial={{ opacity: 0 }}
 					animate={controls}
@@ -55,7 +46,7 @@ export default function Home() {
 					style={{ width: '100%', minHeight: '100vh', zIndex: 100000 }}
 					transition={{ duration: 0.2 }}>
 					<ContactSection />
-				</motion.div> */}
+				</motion.div>
 			</main>
 			<footer className={styles.footer}></footer>
 		</div>

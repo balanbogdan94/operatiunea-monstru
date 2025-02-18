@@ -2,53 +2,33 @@
 import LandingSection from '@/components/sections/LandingSection';
 import styles from './page.module.css';
 import AdvantagesSection from '@/components/sections/AdvantagesSection';
-import { motion, useAnimation, useInView } from 'framer-motion';
 import React from 'react';
 import ContactSection from '@/components/sections/ContactSection';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export default function Home() {
-	const advantageSection = React.useRef(null);
-	const controls = useAnimation();
-	const inView = useInView(advantageSection);
-
-	React.useEffect(() => {
-		if (inView) {
-			controls.start('visible');
-		} else {
-			controls.start('hidden');
-		}
-	}, [controls, inView]);
-
+	const { scrollYProgress } = useScroll();
+	const background = useTransform(
+		scrollYProgress,
+		[0, 0.5],
+		[
+			'linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%)',
+			'linear-gradient(to top, #feada6 0%, #f5efef 100%)',
+		],
+	);
 	return (
-		<div className={styles.page}>
+		<motion.div
+			className={styles.page}
+			style={{ background: background }}
+			transition={{ duration: 0.5, type: 'spring' }}>
 			<main className={styles.main}>
 				<LandingSection />
 
-				<motion.div
-					ref={advantageSection}
-					initial={{ opacity: 0 }}
-					animate={controls}
-					variants={{
-						visible: { opacity: 1 },
-						hidden: { opacity: 0 },
-					}}
-					transition={{ duration: 0.2 }}>
-					<AdvantagesSection />
-				</motion.div>
-				<motion.div
-					className={styles.contact}
-					initial={{ opacity: 0 }}
-					animate={controls}
-					variants={{
-						visible: { opacity: 0, y: 100 },
-						hidden: { opacity: 1 },
-					}}
-					style={{ width: '100%', minHeight: '100vh', zIndex: 100000 }}
-					transition={{ duration: 0.2 }}>
-					<ContactSection />
-				</motion.div>
+				<AdvantagesSection />
+
+				<ContactSection />
 			</main>
-			<footer className={styles.footer}></footer>
-		</div>
+			<footer className={styles.footer}>TEST</footer>
+		</motion.div>
 	);
 }

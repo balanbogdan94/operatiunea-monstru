@@ -1,13 +1,13 @@
+.page {
+	display: flex;
+	flex-direction: column;
+}
+
 .main {
 	display: flex;
 	flex-direction: column;
 	gap: 32px;
-	background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
-	overflow: hidden;
-}
-
-.contact {
-	background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%);
+	/* background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%); */
 }
 
 .main ol {

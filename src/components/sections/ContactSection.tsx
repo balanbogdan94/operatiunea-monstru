@@ -1,10 +1,13 @@
 import React from 'react';
 import styles from './ContactSection.module.css';
+import { motion } from 'framer-motion';
 
 const ContactSection = () => {
 	return (
 		<div className={styles.contactSection}>
-			<h2>Contactează-ne</h2>
+			<motion.h2 style={{ fontWeight: 900 }} whileInView={{ fontWeight: 900 }}>
+				Contactează-ne
+			</motion.h2>
 			<form className={styles.contactForm}>
 				<div className={styles.formGroup}>
 					<label htmlFor='name'>Nume</label>

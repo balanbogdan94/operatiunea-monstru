@@ -6,7 +6,6 @@
 .main {
 	display: flex;
 	flex-direction: column;
-	gap: 32px;
 	/* background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%); */
 }
 

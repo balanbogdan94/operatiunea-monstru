@@ -1,12 +1,9 @@
 import React from 'react';
 import styles from './AdvantagesSection.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faHiking,
-	faTools,
-	faUserFriends,
-} from '@fortawesome/free-solid-svg-icons';
+import { faHiking, faUserFriends } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const AdvantagesSection = () => {
 	const variants = {
@@ -22,7 +19,6 @@ const AdvantagesSection = () => {
 	const getUlVariants = (index: number) => ({
 		initial: {
 			x: -300,
-			// y: -(index * 250 + index * 24 + index * 8),
 			rotate: !index ? 0 : index % 2 === 0 ? 10 : -10,
 		},
 		inView: { y: 0, rotate: 0, x: 0 },
@@ -40,10 +36,24 @@ const AdvantagesSection = () => {
 			</motion.h2>
 			<motion.ul variants={variants}>
 				<motion.li variants={getUlVariants(0)} transition={{ duration: 0.5 }}>
-					<FontAwesomeIcon icon={faTools} />
+					<div
+						style={{
+							position: 'relative',
+							width: '100%',
+							aspectRatio: 16 / 12,
+						}}>
+						<Image
+							style={{ borderRadius: 10 }}
+							objectFit='cover'
+							src={'/top-equpment.jpg'}
+							alt={''}
+							fill
+						/>
+					</div>
 					<h3>Echipamente de top</h3>
-					<span>
-						Undițe, momeli, accesorii şi multe altele, toate de calitate!
+					<span style={{ textAlign: 'end' }}>
+						Undițe, momeli, accesorii şi multe altele,
+						<b style={{ fontSize: 16 }}> toate de calitate!</b>
 					</span>
 				</motion.li>
 				<motion.li variants={getUlVariants(1)} transition={{ duration: 0.2 }}>

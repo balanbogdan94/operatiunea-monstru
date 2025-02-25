@@ -4,6 +4,7 @@ import {
 	faFacebookF,
 	faInstagram,
 	faWhatsapp,
+	faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
 import styles from './SocialMedia.module.css';
 
@@ -29,6 +30,13 @@ const SocialMediaIcons = () => {
 					href='https://api.whatsapp.com/send?phone=40751943516'
 					target='_blank'>
 					<FontAwesomeIcon icon={faWhatsapp} className={styles.icon} />
+				</a>
+			</li>
+			<li>
+				<a
+					href='https://api.whatsapp.com/send?phone=40751943516'
+					target='_blank'>
+					<FontAwesomeIcon icon={faTiktok} className={styles.icon} />
 				</a>
 			</li>
 		</ul>

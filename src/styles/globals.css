@@ -9,9 +9,8 @@
 	--border-size-xxl: 0.75rem;
 
 	/*Colors*/
-	--background: #ffffff;
-	--foreground: #171717;
 	--color-primary: #395e7c;
+	--color-secondary: #ffffff;
 
 	/*Fonts*/
 	--font-alpha-slab-one: 'Alfa Slab One', cursive;

@@ -33,7 +33,7 @@
 }
 
 .socialMediaIcons li a:hover .icon {
-	color: #fff;
+	color: var(--color-secondary);
 	transform: rotateY(360deg);
 }
 

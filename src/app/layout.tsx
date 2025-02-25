@@ -1,17 +1,6 @@
 import type { Metadata } from 'next';
-import { Montserrat, Alfa_Slab_One } from 'next/font/google';
 import './../styles/globals.css';
-
-const montserrat = Montserrat({
-	variable: '--font-montserrat',
-	subsets: ['latin'],
-});
-
-const alfaSlabOne = Alfa_Slab_One({
-	variable: '--font-alfa-slab-one',
-	subsets: ['latin'],
-	weight: ['400'],
-});
+import { alfaSlabOne, montserrat } from '@/styles/fonts';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',

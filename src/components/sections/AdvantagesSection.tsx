@@ -26,7 +26,7 @@ const AdvantagesSection = () => {
 				whileInView='inView'
 				className={styles.root}
 				variants={variants}
-				viewport={{ amount: 0.3 }}>
+				viewport={{ amount: 0.2 }}>
 				<motion.h2 variants={h2Variants} transition={{ duration: 0.3 }}>
 					Descopera ce ti-am pregatit!
 				</motion.h2>
@@ -62,7 +62,7 @@ const AdvantagesSection = () => {
 							<Image
 								style={{ borderRadius: 10 }}
 								objectFit='cover'
-								src={'/top-equpment.jpg'}
+								src={'/nature-gear.jpg'}
 								alt={''}
 								fill
 							/>
@@ -83,7 +83,7 @@ const AdvantagesSection = () => {
 							<Image
 								style={{ borderRadius: 10 }}
 								objectFit='cover'
-								src={'/top-equpment.jpg'}
+								src={'/consulting.jpg'}
 								alt={''}
 								fill
 							/>

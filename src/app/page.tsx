@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import styles from './page.module.css';
 import {
 	AdvantagesSection,
 	ContactSection,
@@ -9,13 +8,13 @@ import {
 
 export default function Home() {
 	return (
-		<div className={styles.page}>
-			<main className={styles.main}>
+		<div>
+			<main>
 				<LandingSection />
 				<AdvantagesSection />
 				<ContactSection />
 			</main>
-			<footer className={styles.footer}>TEST</footer>
+			<footer>TEST</footer>
 		</div>
 	);
 }

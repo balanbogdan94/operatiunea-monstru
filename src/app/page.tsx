@@ -14,7 +14,6 @@ export default function Home() {
 				<AdvantagesSection />
 				<ContactSection />
 			</main>
-			<footer>TEST</footer>
 		</div>
 	);
 }

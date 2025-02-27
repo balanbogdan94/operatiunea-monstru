@@ -96,18 +96,6 @@ const AdvantagesSection = () => {
 					</motion.li>
 				</motion.ul>
 			</motion.div>
-			<svg
-				height='100%'
-				width='100%'
-				style={{ marginTop: '-5px' }}
-				viewBox='0 0 868 134'
-				fill='none'
-				xmlns='http://www.w3.org/2000/svg'>
-				<path
-					d='M0 134C94.2031 62.6385 254.985 15.6285 437.5 15.6285C615.57 15.6285 772.953 60.3768 868 128.83V0.62854L0 0.62854V134Z'
-					fill='#395e7c'
-				/>
-			</svg>
 		</>
 	);
 };

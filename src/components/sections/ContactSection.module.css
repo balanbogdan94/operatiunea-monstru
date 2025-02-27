@@ -1,8 +1,20 @@
 .contactSection {
+	position: relative;
 	font-family: var(--font-montserrat);
-	margin-top: 60px;
-	padding: 20px;
 	text-align: center;
+	background: linear-gradient(to top, #a1c4fd 0%, #c2e9fb 100%);
+	svg {
+		position: absolute;
+		top: -5;
+		left: 0;
+		width: 100%;
+		height: auto;
+		z-index: 1;
+	}
+}
+
+.root {
+	padding: 60px 20px;
 }
 
 .contactForm {

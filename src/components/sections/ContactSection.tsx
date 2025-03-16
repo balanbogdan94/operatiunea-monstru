@@ -1,10 +1,17 @@
+'use client';
+
 import React from 'react';
 import styles from './ContactSection.module.css';
 import { motion } from 'framer-motion';
 import { APIProvider, AdvancedMarker, Map } from '@vis.gl/react-google-maps';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faHouse,
+	faPhone,
+	faMailForward,
+} from '@fortawesome/free-solid-svg-icons';
 const position: google.maps.LatLngLiteral = { lat: 45.667519, lng: 25.608705 };
-const apiKey = process.env.GOOGLE_MAPS_API_KEY ?? '';
+const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
 const ContactSection = () => {
 	return (
@@ -20,11 +27,54 @@ const ContactSection = () => {
 				<APIProvider apiKey={apiKey}>
 					<Map
 						defaultCenter={position}
-						defaultZoom={10}
+						defaultZoom={15}
+						className={styles.map}
+						style={{
+							maxWidth: '80%',
+							height: '400px',
+							boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
+							borderRadius: '10px',
+							overflow: 'hidden',
+							position: 'relative',
+						}}
 						mapId='om-947d8959-0ec1-4c04-879f-0885ab92343d'>
 						<AdvancedMarker position={position} />
 					</Map>
 				</APIProvider>
+			</div>
+			<div className={styles.contactActions}>
+				<a
+					className={styles.contactItem}
+					href={`maps://maps.apple.com/?q=${position.lat},${position.lng}`}>
+					<div className={styles.contactIcon}>
+						<FontAwesomeIcon icon={faHouse} />
+					</div>
+					<span>Aleea Constructorilor Nr. 4</span>
+				</a>
+				<a className={styles.contactItem} href='tel:+40751943516'>
+					<div className={styles.contactIcon}>
+						<FontAwesomeIcon icon={faPhone} />
+					</div>
+					<span>0751 943 516</span>
+				</a>
+				<a className={styles.contactItem} href='mailto:vladtintarean@gmail.com'>
+					<div className={styles.contactIcon}>
+						<FontAwesomeIcon icon={faMailForward} />
+					</div>
+					<span>vladtintarean@gmail.com</span>
+				</a>
+			</div>
+			<h3>Program de funcționare</h3>
+			<div className={styles.hours}>
+				<p>
+					<b>Marti - Vineri:</b> 09:00 - 18:00
+				</p>
+				<p>
+					<b>Sâmbătă:</b> 10:00 - 14:00
+				</p>
+				<p>
+					<b>Duminică-Luni:</b> Închis
+				</p>
 			</div>
 			<h2>Contactează-ne</h2>
 			<form className={styles.contactForm}>
@@ -44,13 +94,6 @@ const ContactSection = () => {
 					Trimite
 				</button>
 			</form>
-
-			<h3>Program de funcționare</h3>
-			<div className={styles.hours}>
-				<p>Luni - Vineri: 09:00 - 18:00</p>
-				<p>Sâmbătă: 10:00 - 14:00</p>
-				<p>Duminică: Închis</p>
-			</div>
 		</section>
 	);
 };

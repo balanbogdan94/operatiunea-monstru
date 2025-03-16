@@ -146,7 +146,7 @@
 	gap: var(--spacing-s);
 	margin-top: var(--spacing-l);
 	font-weight: 700;
-	color: var(--color-primary);
+	color: rgb(7, 94, 82);
 	b {
 		font-weight: 500;
 		color: var(--color-primary);

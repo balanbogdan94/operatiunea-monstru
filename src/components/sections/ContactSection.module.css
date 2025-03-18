@@ -7,6 +7,7 @@
 	flex-direction: column;
 	align-items: center;
 	gap: var(--spacing-xl);
+	padding-bottom: var(--spacing-xl);
 	svg {
 		width: 100%;
 		height: auto;

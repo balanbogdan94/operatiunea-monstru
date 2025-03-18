@@ -5,6 +5,7 @@ import {
 	ContactSection,
 	LandingSection,
 } from '@/components/sections';
+import Footer from '@/components/sections/FooterSection';
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 				<AdvantagesSection />
 				<ContactSection />
 			</main>
+			<Footer />
 		</div>
 	);
 }

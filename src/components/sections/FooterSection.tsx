@@ -5,6 +5,11 @@ import {
 	faWhatsapp,
 	faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
+import {
+	faMapPin,
+	faPhone,
+	faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Footer() {
@@ -120,17 +125,26 @@ export default function Footer() {
 							<h3 className={styles.sectionTitle}>Contact</h3>
 							<ul className={styles.contactList}>
 								<li className={styles.contactItem}>
-									{/* <MapPin className={styles.contactIcon} /> */}
+									<FontAwesomeIcon
+										icon={faMapPin}
+										className={styles.contactIcon}
+									/>
 									<span className={styles.contactText}>
 										Aleea Constructorilor Nr. 4, Brasov, Romania
 									</span>
 								</li>
 								<li className={styles.contactItem}>
-									{/* <Phone className={styles.contactIcon} /> */}
+									<FontAwesomeIcon
+										icon={faPhone}
+										className={styles.contactIcon}
+									/>
 									<span className={styles.contactText}>(+40) 751 943 516</span>
 								</li>
 								<li className={styles.contactItem}>
-									{/* <Mail className={styles.contactIcon} /> */}
+									<FontAwesomeIcon
+										icon={faEnvelope}
+										className={styles.contactIcon}
+									/>
 									<a
 										href='mailto:vladtintarean@gmail.com'
 										className={styles.contactLink}>

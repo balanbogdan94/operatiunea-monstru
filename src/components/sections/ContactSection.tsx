@@ -1,5 +1,4 @@
 'use client';
-
 import React from 'react';
 import styles from './ContactSection.module.css';
 import { motion } from 'framer-motion';
@@ -10,10 +9,13 @@ import {
 	faPhone,
 	faMailForward,
 } from '@fortawesome/free-solid-svg-icons';
-const position: google.maps.LatLngLiteral = { lat: 45.667519, lng: 25.608705 };
+import { position } from '@/model/map-position';
+import { useDeviceBasedMapLocation } from '@/hooks/useDeviceBasedMapLocation';
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
 const ContactSection = () => {
+	const { mapsUrl } = useDeviceBasedMapLocation();
+
 	return (
 		<section className={styles.contactSection}>
 			<motion.svg viewBox='0 0 868 134' xmlns='http://www.w3.org/2000/svg'>
@@ -43,9 +45,7 @@ const ContactSection = () => {
 				</APIProvider>
 			</div>
 			<div className={styles.contactActions}>
-				<a
-					className={styles.contactItem}
-					href={`maps://maps.apple.com/?q=${position.lat},${position.lng}`}>
+				<a className={styles.contactItem} href={mapsUrl}>
 					<div className={styles.contactIcon}>
 						<FontAwesomeIcon icon={faHouse} />
 					</div>

@@ -43,6 +43,7 @@ const AdvantagesSection = () => {
 								src={'/top-equpment.jpg'}
 								alt={''}
 								fill
+								priority={false}
 							/>
 						</motion.div>
 						<h3>Echipamente de top</h3>
@@ -63,6 +64,7 @@ const AdvantagesSection = () => {
 								src={'/nature-gear.jpg'}
 								alt={''}
 								fill
+								priority={false}
 							/>
 						</div>
 						<h3>Produse pentru aventuri în natură</h3>
@@ -83,6 +85,7 @@ const AdvantagesSection = () => {
 								src={'/consulting.jpg'}
 								alt={''}
 								fill
+								priority={false}
 							/>
 						</div>
 						<h3>Consiliere dedicata</h3>

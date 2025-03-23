@@ -17,7 +17,6 @@
 	font-weight: 400;
 	text-align: center;
 	color: var(--color-primary);
-	font-family: var(--font-montserrat);
 }
 
 .contactSection h3 {
@@ -27,7 +26,6 @@
 	font-weight: 400;
 	text-align: center;
 	color: var(--color-primary);
-	font-family: var(--font-montserrat);
 }
 
 .contactForm {
@@ -60,13 +58,13 @@
 	justify-content: center;
 	align-items: center;
 	gap: var(--spacing-s);
+}
 
-	span {
-		font-family: var(--font-montserrat);
-		font-size: 16px;
-		font-weight: 600;
-		color: var(--color-primary);
-	}
+.contactItem span {
+	font-family: var(--font-montserrat);
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--color-primary);
 }
 
 .contactIcon {
@@ -115,17 +113,19 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--spacing-xxs);
-	span {
-		color: var(--color-primary);
-		font-size: 16px;
-		font-family: var(--font-montserrat);
-		margin: 5px 0;
-		font-weight: bold;
-		text-align: left;
-	}
-	label {
-		font-weight: 500;
-	}
+}
+
+.formContactMethod span {
+	color: var(--color-primary);
+	font-size: 16px;
+	font-family: var(--font-montserrat);
+	margin: 5px 0;
+	font-weight: bold;
+	text-align: left;
+}
+
+.formContactMethod label {
+	font-weight: 500;
 }
 
 .formGroup input,
@@ -202,15 +202,16 @@
 	width: 100%;
 	padding: var(--spacing-l);
 	gap: var(--spacing-s);
-
 	font-weight: 700;
 	color: var(--color-secondary);
-	b {
-		font-weight: 500;
-		color: var(--color-secondary);
-	}
-	p:last-child {
-		color: var(--color-secondary);
-		font-weight: 700; /* Example style for the last child */
-	}
+}
+
+.hours b {
+	font-weight: 500;
+	color: var(--color-secondary);
+}
+
+.hours p:last-child {
+	color: var(--color-secondary);
+	font-weight: 700;
 }

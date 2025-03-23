@@ -8,10 +8,6 @@
 	align-items: center;
 	gap: var(--spacing-xl);
 	padding-bottom: var(--spacing-xl);
-	svg {
-		width: 100%;
-		height: auto;
-	}
 }
 
 .contactSection h2 {
@@ -35,7 +31,7 @@
 }
 
 .contactForm {
-	max-width: 80%;
+	width: 100%;
 	background: rgba(255, 255, 255, 0.45);
 	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 	backdrop-filter: blur(13.5px);
@@ -46,7 +42,7 @@
 	display: flex;
 	flex-direction: column;
 	font-family: var(--font-montserrat);
-
+	margin-top: var(--spacing-l);
 	gap: var(--spacing-l);
 }
 
@@ -55,7 +51,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-	gap: var(--spacing-xl);
+	gap: var(--spacing-l);
 	margin-top: var(--spacing-l);
 }
 
@@ -69,7 +65,6 @@
 		font-family: var(--font-montserrat);
 		font-size: 16px;
 		font-weight: 600;
-		text-decoration: underline;
 		color: var(--color-primary);
 	}
 }
@@ -80,10 +75,10 @@
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-primary);
-	padding: var(--spacing-m);
+	padding: var(--spacing-s);
 	border-radius: 100%;
 	aspect-ratio: 1/1;
-	height: 64px;
+	height: 48px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -104,7 +99,33 @@
 .formGroup label {
 	margin-bottom: 5px;
 	font-weight: bold;
-	color: var(--color-primary); /* Complementary color */
+	color: var(--color-primary);
+	font-size: 16px;
+	font-family: var(--font-montserrat);
+}
+
+.formGroup span {
+	color: var(--color-primary);
+	font-size: 12px;
+	font-family: var(--font-montserrat);
+	margin-top: 5px;
+}
+
+.formContactMethod {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-xxs);
+	span {
+		color: var(--color-primary);
+		font-size: 16px;
+		font-family: var(--font-montserrat);
+		margin: 5px 0;
+		font-weight: bold;
+		text-align: left;
+	}
+	label {
+		font-weight: 500;
+	}
 }
 
 .formGroup input,
@@ -128,12 +149,26 @@
 	border-radius: 5px;
 	background-color: var(--color-primary); /* Complementary color */
 	color: var(--color-secondary);
+	font-family: var(--font-montserrat);
+	font-weight: 600;
 	font-size: 16px;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-xs);
+}
+
+.submitIcon {
+	font-size: 1rem;
 }
 
 .submitButton:hover {
-	background-color: #a6febe; /* Complementary hover color */
+	background-color: color-mix(
+		in srgb,
+		var(--color-primary) 70%,
+		transparent
+	); /* Complementary hover color */
 }
 
 .mapContainer {
@@ -144,21 +179,38 @@
 	height: auto;
 }
 
-.hours {
+.contactHours {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	gap: var(--spacing-s);
 	margin-top: var(--spacing-l);
+	width: 100%;
+}
+
+.hours {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: color-mix(in srgb, var(--color-primary) 70%, transparent);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(13.5px);
+	-webkit-backdrop-filter: blur(13.5px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	width: 100%;
+	padding: var(--spacing-l);
+	gap: var(--spacing-s);
+
 	font-weight: 700;
-	color: rgb(7, 94, 82);
+	color: var(--color-secondary);
 	b {
 		font-weight: 500;
-		color: var(--color-primary);
+		color: var(--color-secondary);
 	}
 	p:last-child {
-		color: rgb(160, 1, 1);
+		color: var(--color-secondary);
 		font-weight: 700; /* Example style for the last child */
 	}
 }

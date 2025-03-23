@@ -8,6 +8,7 @@ import {
 	faHouse,
 	faPhone,
 	faMailForward,
+	faPaperPlane,
 } from '@fortawesome/free-solid-svg-icons';
 import { position } from '@/model/map-position';
 import { useDeviceBasedMapLocation } from '@/hooks/useDeviceBasedMapLocation';
@@ -15,6 +16,11 @@ const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
 const ContactSection = () => {
 	const { mapsUrl } = useDeviceBasedMapLocation();
+
+	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+		console.log('Form submitted');
+	};
 
 	return (
 		<section className={styles.contactSection}>
@@ -64,36 +70,80 @@ const ContactSection = () => {
 					<span>vladtintarean@gmail.com</span>
 				</a>
 			</div>
-			<h3>Program de funcționare</h3>
-			<div className={styles.hours}>
-				<p>
-					<b>Marti - Vineri:</b> 09:00 - 18:00
-				</p>
-				<p>
-					<b>Sâmbătă:</b> 10:00 - 14:00
-				</p>
-				<p>
-					<b>Duminică-Luni:</b> Închis
-				</p>
+			<div className={styles.contactHours}>
+				<h3>Program de funcționare</h3>
+				<motion.div
+					className={styles.hours}
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					transition={{ duration: 0.5 }}>
+					<p>
+						<b>Marti - Vineri:</b> 09:00 - 18:00
+					</p>
+					<p>
+						<b>Sâmbătă:</b> 10:00 - 14:00
+					</p>
+					<p>
+						<b>Duminică-Luni:</b> Închis
+					</p>
+				</motion.div>
 			</div>
-			<h2>Contactează-ne</h2>
-			<form className={styles.contactForm}>
-				<div className={styles.formGroup}>
-					<label htmlFor='name'>Nume</label>
-					<input type='text' id='name' name='name' required />
-				</div>
-				<div className={styles.formGroup}>
-					<label htmlFor='email'>Email</label>
-					<input type='email' id='email' name='email' required />
-				</div>
-				<div className={styles.formGroup}>
-					<label htmlFor='message'>Mesaj</label>
-					<textarea id='message' name='message' rows={5} required></textarea>
-				</div>
-				<button type='submit' className={styles.submitButton}>
-					Trimite
-				</button>
-			</form>
+			<div>
+				<h3>Lasa-ne un mesaj</h3>
+				<form className={styles.contactForm} onSubmit={handleSubmit}>
+					<div className={styles.formGroup}>
+						<label htmlFor='name'>Cum te numesti?</label>
+						<input
+							type='text'
+							id='name'
+							name='name'
+							placeholder='Numele tau'
+							required
+						/>
+						<span className={styles.errorMessage}>
+							(Numele este obligatoriu)
+						</span>
+					</div>
+					<div className={styles.formContactMethod}>
+						<span>Cum vrei sa te contactam?</span>
+						<div className={styles.formGroup}>
+							<label htmlFor='email'>Email</label>
+							<input
+								type='email'
+								id='email'
+								name='email'
+								placeholder='pescarul123@email.com'
+								required
+							/>
+						</div>
+						<span>Sau</span>
+						<div className={styles.formGroup}>
+							<label htmlFor='phone'>Telefon</label>
+							<input
+								type='tel'
+								id='phone'
+								name='phone'
+								placeholder='07XX XXX XX7'
+								required
+							/>
+						</div>
+					</div>
+					<div className={styles.formGroup}>
+						<label htmlFor='message'>Mesajul tau</label>
+						<textarea id='message' name='message' rows={5} required></textarea>
+						<span className={styles.errorMessage}>
+							(Mesajul este obligatoriu)
+						</span>
+					</div>
+					<button type='submit' className={styles.submitButton}>
+						Trimite
+						<FontAwesomeIcon
+							icon={faPaperPlane}
+							className={styles.submitIcon}
+						/>
+					</button>
+				</form>
+			</div>
 		</section>
 	);
 };

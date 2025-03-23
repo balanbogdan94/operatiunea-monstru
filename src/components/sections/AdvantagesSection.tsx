@@ -39,8 +39,7 @@ const AdvantagesSection = () => {
 								aspectRatio: 16 / 12,
 							}}>
 							<Image
-								style={{ borderRadius: 10 }}
-								objectFit='cover'
+								style={{ borderRadius: 10, objectFit: 'cover' }}
 								src={'/top-equpment.jpg'}
 								alt={''}
 								fill
@@ -60,8 +59,7 @@ const AdvantagesSection = () => {
 								aspectRatio: 16 / 12,
 							}}>
 							<Image
-								style={{ borderRadius: 10 }}
-								objectFit='cover'
+								style={{ borderRadius: 10, objectFit: 'cover' }}
 								src={'/nature-gear.jpg'}
 								alt={''}
 								fill
@@ -81,8 +79,7 @@ const AdvantagesSection = () => {
 								aspectRatio: 16 / 12,
 							}}>
 							<Image
-								style={{ borderRadius: 10 }}
-								objectFit='cover'
+								style={{ borderRadius: 10, objectFit: 'cover' }}
 								src={'/consulting.jpg'}
 								alt={''}
 								fill

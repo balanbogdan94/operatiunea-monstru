@@ -11,6 +11,7 @@
 		'callToAction';
 	justify-items: center;
 	gap: 20px;
+	position: relative;
 }
 
 .callToAction {
@@ -98,6 +99,7 @@
 			'logo hero'
 			'logo callToAction';
 		place-items: center;
+		height: 175dvh;
 	}
 	.root h1 {
 		font-size: 64px;
@@ -124,5 +126,13 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		margin-bottom: 200px;
+	}
+
+	.bottomCircle {
+		position: absolute;
+		bottom: -10;
+		width: 100%;
+		height: auto;
+		overflow: hidden;
 	}
 }

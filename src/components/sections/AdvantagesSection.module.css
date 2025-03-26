@@ -55,6 +55,29 @@
 	color: #385e7c;
 }
 
-.root svg {
-	font-size: 32px;
+@media (min-width: 768px) {
+	.root h2 {
+		font-size: 48px;
+		line-height: 52px;
+		font-weight: 600;
+	}
+
+	.root ul {
+		flex-direction: row;
+		gap: 48px;
+	}
+
+	.root li {
+		max-width: 400px;
+	}
+
+	.root li h3 {
+		font-size: 32px;
+		line-height: 36px;
+	}
+
+	.root li span {
+		font-size: 16px;
+		line-height: 24px;
+	}
 }

@@ -47,7 +47,7 @@ const AdvantagesSection = () => {
 							/>
 						</motion.div>
 						<h3>Echipamente de top</h3>
-						<span style={{ textAlign: 'end' }}>
+						<span>
 							Undițe, momeli, accesorii şi multe altele,
 							<b style={{ fontSize: 16 }}> toate de calitate!</b>
 						</span>
@@ -89,7 +89,7 @@ const AdvantagesSection = () => {
 							/>
 						</div>
 						<h3>Consiliere dedicata</h3>
-						<span style={{ textAlign: 'start' }}>
+						<span>
 							Echipa noastră pasionată te va ajuta să alegi{' '}
 							<b style={{ fontSize: 16 }}>exact ce îți trebuie!</b>
 						</span>

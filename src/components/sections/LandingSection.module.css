@@ -11,9 +11,6 @@
 		'callToAction';
 	justify-items: center;
 	gap: 20px;
-	scroll-snap-align: start;
-	position: relative;
-	scroll-snap-stop: always;
 }
 
 .callToAction {
@@ -44,33 +41,24 @@
 	justify-content: center;
 }
 
-.root h1,
-.root h2 {
-	text-align: center;
-	max-width: 500px;
-}
-
 .root h1 {
 	font-family: var(--font-alpha-slab-one);
-	font-size: 64px;
-	letter-spacing: 2px;
+	font-size: 42px;
+	line-height: 48px;
 	color: #395e7c;
 }
 
 .root h2 {
+	font-size: 24px;
+	line-height: 28px;
 	font-family: var(--font-montserrat);
-	font-size: 32px;
-	line-height: 36px;
 	font-weight: 400;
 }
 
-@keyframes underlines {
-	0% {
-		width: 0;
-	}
-	100% {
-		width: 100%;
-	}
+.root h1,
+.root h2 {
+	text-align: center;
+	max-width: 500px;
 }
 
 .highlightText {
@@ -102,23 +90,39 @@
 	display: flex;
 }
 
-@keyframes underlines {
-	0% {
-		transform: scaleX(0);
+@media screen and (min-width: 768px) {
+	.root {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 100dvh 75dvh;
+		grid-template-areas:
+			'logo hero'
+			'logo callToAction';
+		place-items: center;
 	}
-	100% {
-		transform: scaleX(1);
-	}
-}
-
-@media screen and (max-width: 768px) {
 	.root h1 {
-		font-size: 42px;
-		line-height: 48px;
+		font-size: 64px;
+		letter-spacing: 2px;
+		line-height: 72px;
 	}
 
 	.root h2 {
-		font-size: 24px;
-		line-height: 28px;
+		font-size: 32px;
+		line-height: 36px;
+	}
+
+	.logo {
+		position: relative;
+		height: 100%;
+		display: block;
+		top: 0;
+	}
+
+	.logo > svg {
+		max-width: 50%;
+		position: sticky;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-bottom: 200px;
 	}
 }

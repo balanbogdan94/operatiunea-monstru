@@ -13,6 +13,7 @@ import {
 import { position } from '@/model/map-position';
 import { useDeviceBasedMapLocation } from '@/hooks/useDeviceBasedMapLocation';
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
+console.log('Google Maps API Key:', apiKey ? 'Present' : 'Missing');
 
 const ContactSection = () => {
 	const { mapsUrl } = useDeviceBasedMapLocation();

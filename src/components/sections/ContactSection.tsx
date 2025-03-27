@@ -24,8 +24,14 @@ const ContactSection = () => {
 
 	return (
 		<section className={styles.contactSection}>
-			<motion.svg viewBox='0 0 868 134' xmlns='http://www.w3.org/2000/svg'>
+			<motion.svg
+				preserveAspectRatio='none'
+				viewBox='0 0 868 134'
+				xmlns='http://www.w3.org/2000/svg'
+				width='100%'
+				height='100%'>
 				<motion.path
+					width='100%'
 					d='M0 134C94.2031 62.6385 254.985 15.6285 437.5 15.6285C615.57 15.6285 772.953 60.3768 868 128.83V0.62854L0 0.62854V134Z'
 					fill='#395e7c'
 				/>
@@ -88,7 +94,7 @@ const ContactSection = () => {
 					</p>
 				</motion.div>
 			</div>
-			<div>
+			<div className={styles.contactFormWrapper}>
 				<h3>Lasa-ne un mesaj</h3>
 				<form className={styles.contactForm} onSubmit={handleSubmit}>
 					<div className={styles.formGroup}>

@@ -235,6 +235,7 @@
 		width: 100vw;
 		height: 100px;
 		max-height: 100px;
+		margin-top: -5px;
 	}
 
 	.contactSection h2 {

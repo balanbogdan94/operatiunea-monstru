@@ -11,6 +11,7 @@ import {
 	faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
 
 export default function Footer() {
 	return (
@@ -166,7 +167,11 @@ export default function Footer() {
 							© {new Date().getFullYear()} Operatiunea Monstru. All rights
 							reserved.
 							<br />
-							Made with ❤️ by Bogdan Balan.
+							Made with ❤️ by{' '}
+							<Link href='https://github.com/balanbogdan94' target='_blank'>
+								Bogdan Balan
+							</Link>
+							.
 						</p>
 					</div>
 				</div>

@@ -26,17 +26,20 @@
 	gap: 10px;
 }
 
+.logo {
+	grid-area: logo;
+	display: flex;
+	justify-content: center;
+	position: relative;
+	z-index: 20;
+}
+
 .logo > svg {
 	margin-left: 18px;
 	width: 65svw;
-}
-.logo {
-	grid-area: logo;
 	position: sticky;
 	top: 48px;
-	z-index: 1;
-	display: flex;
-	justify-content: center;
+	z-index: 20;
 }
 
 .root h1 {
@@ -88,6 +91,63 @@
 	display: flex;
 }
 
+.underwaterContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.bubblesContainer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 5;
+	pointer-events: none;
+}
+
+.bubble {
+	position: absolute;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+		inset 0 0 10px rgba(255, 255, 255, 0.7);
+	transition: top 4s ease-in-out, left 4s ease-in-out;
+	animation: bubbleFloat 8s infinite alternate ease-in-out;
+	will-change: transform;
+}
+
+@keyframes bubbleFloat {
+	0% {
+		transform: translateY(0) scale(1);
+	}
+	50% {
+		transform: translateY(-20px) scale(1.05);
+	}
+	100% {
+		transform: translateY(0) scale(1);
+	}
+}
+
+.bubble:nth-child(3n + 1) {
+	animation-duration: 8s;
+}
+
+.bubble:nth-child(3n + 2) {
+	animation-duration: 10s;
+	animation-delay: 1.5s;
+}
+
+.bubble:nth-child(3n + 3) {
+	animation-duration: 12s;
+	animation-delay: 0.5s;
+}
+
 @media screen and (min-width: 768px) {
 	.root {
 		grid-template-columns: 1fr 1fr;
@@ -114,6 +174,7 @@
 		height: 80%;
 		display: block;
 		align-self: stretch;
+		z-index: 20;
 	}
 
 	.logo > svg {
@@ -123,6 +184,7 @@
 		top: 25vh;
 		left: 100%;
 		transform: translateX(-25%);
+		z-index: 20;
 	}
 
 	.bottomCircle {

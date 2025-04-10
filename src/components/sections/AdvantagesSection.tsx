@@ -31,10 +31,7 @@ const AdvantagesSection = () => {
 					Descopera ce ti-am pregatit!
 				</motion.h2>
 				<motion.ul variants={variants}>
-					<motion.li
-						variants={liVariants}
-						initial={{ x: 500 }}
-						transition={{ duration: 0.5 }}>
+					<motion.li variants={liVariants} transition={{ duration: 0.5 }}>
 						<motion.div
 							style={{
 								position: 'relative',
@@ -76,10 +73,7 @@ const AdvantagesSection = () => {
 							<b style={{ fontSize: 16 }}>gadgeturi utile.</b>
 						</span>
 					</motion.li>
-					<motion.li
-						variants={liVariants}
-						initial={{ x: -500 }}
-						transition={{ duration: 0.3 }}>
+					<motion.li variants={liVariants} transition={{ duration: 0.3 }}>
 						<div
 							style={{
 								position: 'relative',

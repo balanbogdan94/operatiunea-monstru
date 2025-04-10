@@ -4,7 +4,6 @@ import styles from './LandingSection.module.css';
 import SocialMediaIcons from '../common/SocialMedia';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
-import { Bubbles } from '../common/Bubbles';
 
 const LandingSection = () => {
 	const { scrollY, scrollYProgress } = useScroll();
@@ -28,7 +27,6 @@ const LandingSection = () => {
 			className={styles.root}
 			style={{ background }}
 			transition={{ duration: 0.5, type: 'spring' }}>
-			<Bubbles count={4} />
 			<motion.div
 				className={styles.logo}
 				initial={{ width: '30%', rotate: 0 }}

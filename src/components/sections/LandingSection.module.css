@@ -17,9 +17,6 @@
 .callToAction {
 	grid-area: callToAction;
 	align-self: flex-start;
-	scroll-snap-align: end;
-	scroll-snap-stop: always;
-	scroll-margin: 20svh;
 }
 
 .landingText {
@@ -94,12 +91,12 @@
 @media screen and (min-width: 768px) {
 	.root {
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 100dvh 75dvh;
+		grid-template-rows: 100dvh 50dvh;
 		grid-template-areas:
 			'logo hero'
 			'logo callToAction';
 		place-items: center;
-		height: 175dvh;
+		height: 150dvh;
 	}
 	.root h1 {
 		font-size: 64px;
@@ -114,17 +111,18 @@
 
 	.logo {
 		position: relative;
-		height: 100%;
+		height: 80%;
 		display: block;
+		align-self: stretch;
 	}
 
 	.logo > svg {
 		max-width: 50%;
 		position: sticky;
 		min-width: 400px;
-		top: 55%;
-		left: 50%;
-		margin-bottom: 200px;
+		top: 25vh;
+		left: 100%;
+		transform: translateX(-25%);
 	}
 
 	.bottomCircle {

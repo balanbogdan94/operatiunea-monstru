@@ -34,12 +34,10 @@
 	display: flex;
 	justify-content: center;
 }
+
 .logo > svg {
 	margin-left: 18px;
 	width: 65svw;
-	position: sticky;
-	top: 48px;
-	z-index: 20;
 }
 
 .root h1 {

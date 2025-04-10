@@ -28,12 +28,12 @@
 
 .logo {
 	grid-area: logo;
+	position: sticky;
+	top: 48px;
+	z-index: 1;
 	display: flex;
 	justify-content: center;
-	position: relative;
-	z-index: 20;
 }
-
 .logo > svg {
 	margin-left: 18px;
 	width: 65svw;
@@ -69,19 +69,6 @@
 	display: inline-block;
 }
 
-.callToAction .highlightText::after {
-	content: '';
-	position: absolute;
-	left: 0;
-	bottom: -2px;
-	width: 100%;
-	height: 2px;
-	background: #395e7c;
-	transform: scaleX(0);
-	transform-origin: left;
-	animation: underlines 2s ease-in-out forwards;
-}
-
 .bottomCircle {
 	position: absolute;
 	bottom: 0;
@@ -89,69 +76,6 @@
 	height: 50px;
 	overflow: hidden;
 	display: flex;
-}
-
-.underwaterContainer {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
-	pointer-events: none;
-}
-
-.bubblesContainer {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	z-index: 5;
-	pointer-events: none;
-}
-
-.bubble {
-	position: absolute;
-	border-radius: 50%;
-	box-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
-		inset 0 0 10px rgba(255, 255, 255, 0.7);
-	transition: top 6s ease-in-out, left 6s ease-in-out;
-	animation: bubbleFloat 15s infinite ease-in-out;
-	will-change: transform;
-}
-
-@keyframes bubbleFloat {
-	0% {
-		transform: translateY(0) scale(1);
-	}
-	25% {
-		transform: translateY(-15px) translateX(10px) scale(1.03);
-	}
-	50% {
-		transform: translateY(-25px) translateX(5px) scale(1.05);
-	}
-	75% {
-		transform: translateY(-10px) translateX(-8px) scale(1.02);
-	}
-	100% {
-		transform: translateY(0) scale(1);
-	}
-}
-
-.bubble:nth-child(3n + 1) {
-	animation-duration: 18s;
-}
-
-.bubble:nth-child(3n + 2) {
-	animation-duration: 20s;
-	animation-delay: 2s;
-}
-
-.bubble:nth-child(3n + 3) {
-	animation-duration: 22s;
-	animation-delay: 1s;
 }
 
 @media screen and (min-width: 768px) {

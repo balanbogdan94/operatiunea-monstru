@@ -1,94 +1,14 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import BrandLogo from '../common/Logo';
 import styles from './LandingSection.module.css';
 import SocialMediaIcons from '../common/SocialMedia';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
-
-// Component pentru bule
-const Bubbles = ({ count = 12 }) => {
-	const [bubbles, setBubbles] = useState<
-		Array<{
-			id: number;
-			size: number;
-			top: string;
-			left: string;
-			color: string;
-		}>
-	>([]);
-
-	useEffect(() => {
-		// Culori pentru bule
-		const colors = [
-			'rgba(255, 255, 255, 0.5)',
-			'rgba(173, 216, 230, 0.6)',
-			'rgba(135, 206, 250, 0.5)',
-			'rgba(176, 224, 230, 0.6)',
-		];
-
-		// Generăm bulele
-		const newBubbles = Array.from({ length: count }, (_, i) => ({
-			id: i,
-			size: Math.random() * 50 + 20, // Între 20px și 70px
-			top: `${Math.random() * 80}%`,
-			left: `${Math.random() * 90}%`,
-			color: colors[Math.floor(Math.random() * colors.length)],
-		}));
-
-		setBubbles(newBubbles);
-
-		// Schimbăm pozițiile bulelor la intervale aleatorii
-		const interval = setInterval(() => {
-			setBubbles((prev) =>
-				prev.map((bubble) => ({
-					...bubble,
-					top: `${Math.random() * 80}%`,
-					left: `${Math.random() * 90}%`,
-				})),
-			);
-		}, 5000);
-
-		return () => clearInterval(interval);
-	}, [count]);
-
-	return (
-		<div className={styles.bubblesContainer}>
-			{bubbles.map((bubble) => (
-				<div
-					key={bubble.id}
-					className={styles.bubble}
-					style={{
-						width: `${bubble.size}px`,
-						height: `${bubble.size}px`,
-						top: bubble.top,
-						left: bubble.left,
-						background: `radial-gradient(circle at 30% 30%, white, ${bubble.color})`,
-					}}
-				/>
-			))}
-		</div>
-	);
-};
+import { Bubbles } from '../common/Bubbles';
 
 const LandingSection = () => {
 	const { scrollY, scrollYProgress } = useScroll();
 	const isMobile = useMediaQuery({ maxWidth: 768 });
-	const [isDesktop, setIsDesktop] = useState(true);
-
-	useEffect(() => {
-		// Detectam tipul de dispozitiv
-		const checkDevice = () => {
-			setIsDesktop(window.innerWidth > 768);
-		};
-
-		checkDevice();
-		window.addEventListener('resize', checkDevice);
-
-		return () => {
-			window.removeEventListener('resize', checkDevice);
-		};
-	}, []);
 
 	const background = useTransform(
 		scrollYProgress,
@@ -108,8 +28,6 @@ const LandingSection = () => {
 			className={styles.root}
 			style={{ background }}
 			transition={{ duration: 0.5, type: 'spring' }}>
-			{isDesktop && <Bubbles />}
-
 			<motion.div
 				className={styles.logo}
 				initial={{ width: '30%', rotate: 0 }}

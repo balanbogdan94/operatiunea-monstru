@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import BrandLogo from '../common/Logo';
 import styles from './LandingSection.module.css';

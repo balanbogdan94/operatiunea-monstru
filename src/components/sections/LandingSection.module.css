@@ -97,6 +97,7 @@
 			'logo hero'
 			'logo callToAction';
 		place-items: center;
+		justify-items: flex-start;
 		height: 150dvh;
 	}
 	.root h1 {
@@ -124,7 +125,6 @@
 		min-width: 400px;
 		top: 25vh;
 		left: 100%;
-		transform: translateX(-25%);
 		z-index: 20;
 	}
 

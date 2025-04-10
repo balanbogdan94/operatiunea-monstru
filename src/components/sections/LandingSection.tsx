@@ -5,6 +5,15 @@ import styles from './LandingSection.module.css';
 import SocialMediaIcons from '../common/SocialMedia';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
+import dynamic from 'next/dynamic';
+
+// Import Bubbles with SSR disabled
+const Bubbles = dynamic(
+	() => import('../common/Bubbles').then((mod) => mod.Bubbles),
+	{
+		ssr: false,
+	},
+);
 
 const LandingSection = () => {
 	const { scrollY, scrollYProgress } = useScroll();
@@ -28,6 +37,7 @@ const LandingSection = () => {
 			className={styles.root}
 			style={{ background }}
 			transition={{ duration: 0.5, type: 'spring' }}>
+			{!isMobile && <Bubbles count={8} />}
 			<motion.div
 				className={styles.logo}
 				initial={{ width: '30%', rotate: 0 }}

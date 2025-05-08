@@ -36,7 +36,7 @@ const LandingSection = () => {
 			className={styles.root}
 			style={{ background }}
 			transition={{ duration: 0.5, type: 'spring' }}>
-			{!isMobile && <Bubbles count={8} />}
+			{!isMobile && <Bubbles count={4} />}
 			<motion.div
 				className={styles.logo}
 				initial={{ width: '30%', rotate: 0 }}

@@ -2,7 +2,13 @@ import styles from './Bubbles.module.css';
 
 const getRandomWidth = () => Math.floor(Math.random() * 100) + 50;
 const getRandomColor = () => {
-	const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A1', '#FFA133'];
+	const colors = [
+		'rgba(163, 223, 255, 0.5)',
+		'rgba(127, 200, 248, 0.5)',
+		'rgba(91, 174, 230, 0.5)',
+		'rgba(58, 148, 214, 0.5)',
+		'rgba(33, 122, 181, 0.5)',
+	];
 	return colors[Math.floor(Math.random() * colors.length)];
 };
 const getRandomPosition = () => {

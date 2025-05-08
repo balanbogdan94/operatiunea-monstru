@@ -7,7 +7,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import dynamic from 'next/dynamic';
 
-// Import Bubbles with SSR disabled
 const Bubbles = dynamic(
 	() => import('../common/Bubbles').then((mod) => mod.Bubbles),
 	{

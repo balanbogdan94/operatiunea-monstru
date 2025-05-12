@@ -44,8 +44,6 @@ const ContactSection = () => {
 						defaultZoom={15}
 						className={styles.map}
 						style={{
-							maxWidth: '80%',
-							height: '400px',
 							boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
 							borderRadius: '10px',
 							overflow: 'hidden',

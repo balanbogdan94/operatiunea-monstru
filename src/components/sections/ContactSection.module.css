@@ -222,6 +222,7 @@
 		position: relative;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto auto auto;
+
 		grid-template-areas:
 			'wave wave'
 			'title title'
@@ -246,11 +247,9 @@
 
 	.mapContainer {
 		grid-area: map;
-		width: 100%;
+		width: 60%;
 		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		justify-self: flex-end;
 	}
 
 	.contactActions {
@@ -276,12 +275,22 @@
 		align-self: center;
 		max-width: 500px;
 		align-items: flex-start;
+		color: var(--color-primary);
+	}
+	.contactHours b {
+		color: var(--color-primary);
 	}
 
 	.hours {
 		align-items: flex-start;
-		border-radius: 10px 100px 100px 10px;
-		background-color: var(--color-primary);
+		background-color: unset;
+		box-shadow: unset;
+		backdrop-filter: unset;
+		-webkit-backdrop-filter: unset;
+		border: unset;
+		width: 100%;
+		padding: var(--spacing-l);
+		color: var(--color-primary);
 	}
 
 	.contactFormWrapper {

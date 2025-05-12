@@ -30,6 +30,7 @@
 	margin-left: 18px;
 	width: 65svw;
 }
+
 .logo {
 	grid-area: logo;
 	position: sticky;
@@ -66,6 +67,15 @@
 	display: inline-block;
 }
 
+.bottomCircle {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	display: flex;
+}
+
 .callToAction .highlightText::after {
 	content: '';
 	position: absolute;
@@ -79,15 +89,6 @@
 	animation: underlines 2s ease-in-out forwards;
 }
 
-.bottomCircle {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 50px;
-	overflow: hidden;
-	display: flex;
-}
-
 @media screen and (min-width: 768px) {
 	.root {
 		grid-template-columns: 1fr 1fr;
@@ -96,6 +97,7 @@
 			'logo hero'
 			'logo callToAction';
 		place-items: center;
+		justify-items: flex-start;
 		height: 150dvh;
 	}
 	.root h1 {
@@ -114,6 +116,7 @@
 		height: 80%;
 		display: block;
 		align-self: stretch;
+		z-index: 20;
 	}
 
 	.logo > svg {
@@ -122,7 +125,7 @@
 		min-width: 400px;
 		top: 25vh;
 		left: 100%;
-		transform: translateX(-25%);
+		z-index: 20;
 	}
 
 	.bottomCircle {

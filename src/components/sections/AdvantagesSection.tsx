@@ -10,14 +10,27 @@ const AdvantagesSection = () => {
 	};
 
 	const h2Variants = {
-		initial: { color: '#2a3541', scale: 0.7 },
-		inView: { color: '#ffffff', scale: 1 },
+		initial: { color: '#395e7c', scale: 0.7 },
+		inView: { color: '#395e7c', scale: 1 },
 	};
 
 	const liVariants = {
 		initial: { opacity: 0 },
 		inView: { opacity: 1, x: 0 },
 	};
+
+	// Hover effect for list items
+	const hoverEffect = {
+		scale: 1.1,
+		boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
+		transition: {
+			duration: 0.5,
+			type: 'spring',
+			stiffness: 100,
+			damping: 10,
+		},
+	};
+
 	return (
 		<>
 			<motion.div
@@ -27,11 +40,23 @@ const AdvantagesSection = () => {
 				className={styles.root}
 				variants={variants}
 				viewport={{ amount: 0.2 }}>
-				<motion.h2 variants={h2Variants} transition={{ duration: 0.3 }}>
-					Descopera ce ti-am pregatit!
-				</motion.h2>
+				<div>
+					<motion.h2 variants={h2Variants} transition={{ duration: 0.3 }}>
+						Descopera ce ti-am pregatit!
+					</motion.h2>
+					<motion.p
+						variants={h2Variants}
+						transition={{ duration: 0.3 }}
+						style={{ marginBottom: 20 }}>
+						Produse și servicii de calitate pentru pasionații de pescuit și
+						aventură în natură.
+					</motion.p>
+				</div>
 				<motion.ul variants={variants}>
-					<motion.li variants={liVariants} transition={{ duration: 0.5 }}>
+					<motion.li
+						variants={liVariants}
+						transition={{ duration: 0.5 }}
+						whileHover={hoverEffect}>
 						<motion.div
 							style={{
 								position: 'relative',
@@ -52,7 +77,10 @@ const AdvantagesSection = () => {
 							<b style={{ fontSize: 16 }}> toate de calitate!</b>
 						</span>
 					</motion.li>
-					<motion.li variants={liVariants} transition={{ duration: 0.3 }}>
+					<motion.li
+						variants={liVariants}
+						transition={{ duration: 0.3 }}
+						whileHover={hoverEffect}>
 						<div
 							style={{
 								position: 'relative',
@@ -73,7 +101,10 @@ const AdvantagesSection = () => {
 							<b style={{ fontSize: 16 }}>gadgeturi utile.</b>
 						</span>
 					</motion.li>
-					<motion.li variants={liVariants} transition={{ duration: 0.3 }}>
+					<motion.li
+						variants={liVariants}
+						transition={{ duration: 0.3 }}
+						whileHover={hoverEffect}>
 						<div
 							style={{
 								position: 'relative',

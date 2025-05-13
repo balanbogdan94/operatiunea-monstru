@@ -1,18 +1,14 @@
 'use client';
 import React from 'react';
 import styles from './ContactSection.module.css';
-import { motion } from 'framer-motion';
-import { APIProvider, AdvancedMarker, Map } from '@vis.gl/react-google-maps';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	faHouse,
 	faPhone,
-	faMailForward,
 	faPaperPlane,
+	faEnvelope,
+	faLocationDot,
 } from '@fortawesome/free-solid-svg-icons';
-import { position } from '@/model/map-position';
 import { useDeviceBasedMapLocation } from '@/hooks/useDeviceBasedMapLocation';
-const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 
 const ContactSection = () => {
 	const { mapsUrl } = useDeviceBasedMapLocation();
@@ -24,40 +20,23 @@ const ContactSection = () => {
 
 	return (
 		<section className={styles.contactSection}>
-			<motion.svg
-				preserveAspectRatio='none'
-				viewBox='0 0 868 134'
-				xmlns='http://www.w3.org/2000/svg'
-				width='100%'
-				height='100%'>
-				<motion.path
-					width='100%'
-					d='M0 134C94.2031 62.6385 254.985 15.6285 437.5 15.6285C615.57 15.6285 772.953 60.3768 868 128.83V0.62854L0 0.62854V134Z'
-					fill='#395e7c'
-				/>
-			</motion.svg>
 			<h2>Unde ne gasesti</h2>
 			<div className={styles.mapContainer}>
-				<APIProvider apiKey={apiKey}>
-					<Map
-						defaultCenter={position}
-						defaultZoom={15}
-						className={styles.map}
-						style={{
-							boxShadow: '0 10px 20px rgba(0, 0, 0, 0.3)',
-							borderRadius: '10px',
-							overflow: 'hidden',
-							position: 'relative',
-						}}
-						mapId='om-947d8959-0ec1-4c04-879f-0885ab92343d'>
-						<AdvancedMarker position={position} />
-					</Map>
-				</APIProvider>
+				<iframe
+					title='Location Map'
+					src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2787.113568226502!2d25.59422!3d45.64855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b35b7cce0f0001%3A0x9c1e87efe7a2204!2sAleea%20Constructorilor%204%2C%20Bra%C8%99ov%20500388!5e0!3m2!1sen!2sro!4v1715631193450!5m2!1sen!2sro'
+					width='100%'
+					height='100%'
+					style={{ border: 0 }}
+					allowFullScreen
+					loading='lazy'
+					referrerPolicy='no-referrer-when-downgrade'></iframe>
 			</div>
 			<div className={styles.contactActions}>
+				<span>Informații de contact</span>
 				<a className={styles.contactItem} href={mapsUrl}>
 					<div className={styles.contactIcon}>
-						<FontAwesomeIcon icon={faHouse} />
+						<FontAwesomeIcon icon={faLocationDot} />
 					</div>
 					<span>Aleea Constructorilor Nr. 4</span>
 				</a>
@@ -69,31 +48,33 @@ const ContactSection = () => {
 				</a>
 				<a className={styles.contactItem} href='mailto:vladtintarean@gmail.com'>
 					<div className={styles.contactIcon}>
-						<FontAwesomeIcon icon={faMailForward} />
+						<FontAwesomeIcon icon={faEnvelope} />
 					</div>
 					<span>vladtintarean@gmail.com</span>
 				</a>
+				<div className={styles.contactHours}>
+					<h3>Program de funcționare</h3>
+					<div className={styles.hours}>
+						<p>
+							<b>Marti - Vineri:</b> 09:00 - 18:00
+						</p>
+						<p>
+							<b>Sâmbătă:</b> 10:00 - 14:00
+						</p>
+						<p>
+							<b>Duminică-Luni:</b> Închis
+						</p>
+					</div>
+				</div>
 			</div>
-			<div className={styles.contactHours}>
-				<h3>Program de funcționare</h3>
-				<motion.div
-					className={styles.hours}
-					initial={{ opacity: 0 }}
-					whileInView={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}>
-					<p>
-						<b>Marti - Vineri:</b> 09:00 - 18:00
-					</p>
-					<p>
-						<b>Sâmbătă:</b> 10:00 - 14:00
-					</p>
-					<p>
-						<b>Duminică-Luni:</b> Închis
-					</p>
-				</motion.div>
-			</div>
+
 			<div className={styles.contactFormWrapper}>
 				<h3>Lasa-ne un mesaj</h3>
+				<p>
+					Ai întrebări sau vrei să afli mai multe despre produsele și serviciile
+					noastre? Completează formularul și te vom contacta în cel mai scurt
+					timp.
+				</p>
 				<form className={styles.contactForm} onSubmit={handleSubmit}>
 					<div className={styles.formGroup}>
 						<label htmlFor='name'>Cum te numesti?</label>

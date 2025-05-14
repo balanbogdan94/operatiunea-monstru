@@ -25,8 +25,8 @@ const AdvantagesSection = () => {
 	};
 
 	const h2Variants = {
-		initial: { color: '#395e7c', scale: 0.7 },
-		inView: { color: '#395e7c', scale: 1 },
+		initial: { scale: 0.7 },
+		inView: { scale: 1 },
 	};
 
 	const liVariants = {

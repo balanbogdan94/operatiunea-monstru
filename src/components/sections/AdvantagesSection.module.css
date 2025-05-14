@@ -2,10 +2,27 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 60px;
+	gap: 40px;
 	padding: 60px 20px;
 	scroll-snap-align: start;
 	background: rgb(228, 243, 254);
+}
+.title {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+
+.title p {
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: 400;
+	text-wrap: balance;
+	color: #000000;
+	max-width: 80%;
+	text-align: center;
 }
 .root h2 {
 	font-family: var(--font-montserrat);
@@ -60,21 +77,6 @@
 		font-size: 42px;
 		line-height: 52px;
 		font-weight: 800;
-	}
-
-	.title {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.title p {
-		font-size: 16px;
-		line-height: 24px;
-		font-weight: 400;
-		text-wrap: balance;
-		color: #000000;
 	}
 
 	.root ul {

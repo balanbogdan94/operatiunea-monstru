@@ -33,7 +33,7 @@ const ContactSection = () => {
 					referrerPolicy='no-referrer-when-downgrade'></iframe>
 			</div>
 			<div className={styles.contactActions}>
-				<span>Informații de contact</span>
+				<h3>Informații de contact</h3>
 				<a className={styles.contactItem} href={mapsUrl}>
 					<div className={styles.contactIcon}>
 						<FontAwesomeIcon icon={faLocationDot} />
@@ -53,7 +53,7 @@ const ContactSection = () => {
 					<span>vladtintarean@gmail.com</span>
 				</a>
 				<div className={styles.contactHours}>
-					<h3>Program de funcționare</h3>
+					<h4>Program de funcționare</h4>
 					<div className={styles.hours}>
 						<p>
 							<b>Marti - Vineri:</b> 09:00 - 18:00
@@ -69,12 +69,14 @@ const ContactSection = () => {
 			</div>
 
 			<div className={styles.contactFormWrapper}>
-				<h3>Lasa-ne un mesaj</h3>
-				<p>
-					Ai întrebări sau vrei să afli mai multe despre produsele și serviciile
-					noastre? Completează formularul și te vom contacta în cel mai scurt
-					timp.
-				</p>
+				<div className={styles.contactTitle}>
+					<h3>Lasa-ne un mesaj</h3>
+					<p>
+						Ai întrebări sau vrei să afli mai multe despre produsele și
+						serviciile noastre? Completează formularul și te vom contacta în cel
+						mai scurt timp.
+					</p>
+				</div>
 				<form className={styles.contactForm} onSubmit={handleSubmit}>
 					<div className={styles.formGroup}>
 						<label htmlFor='name'>Cum te numesti?</label>

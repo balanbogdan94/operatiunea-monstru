@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './AdvantagesSection.module.css';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useMediaQuery } from 'react-responsive';
 
 const AdvantagesSection = () => {
+	// State to track if component has mounted (client-side)
+	const [isMounted, setIsMounted] = useState(false);
+
+	// Always call hooks at the top level
+	const isDesktopRaw = useMediaQuery({ minWidth: 768 });
+
+	// Handle clientside hydration
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+
+	// Only apply desktop styles after client-side hydration
+	const isDesktop = isMounted && isDesktopRaw;
+
 	const variants = {
 		initial: {},
 		inView: {},
@@ -22,6 +37,7 @@ const AdvantagesSection = () => {
 	// Hover effect for list items
 	const hoverEffect = {
 		scale: 1.1,
+		rotate: 0, // Reset rotation on hover
 		boxShadow: '0 10px 20px rgba(0,0,0,0.1)',
 		transition: {
 			duration: 0.5,
@@ -30,6 +46,12 @@ const AdvantagesSection = () => {
 			damping: 10,
 		},
 	};
+
+	// First item rotation (5 degrees on desktop)
+	const firstItemStyle = isDesktop ? { rotate: -5 } : {};
+
+	// Last item rotation (5 degrees on desktop)
+	const lastItemStyle = isDesktop ? { rotate: 5 } : {};
 
 	return (
 		<>
@@ -40,7 +62,7 @@ const AdvantagesSection = () => {
 				className={styles.root}
 				variants={variants}
 				viewport={{ amount: 0.2 }}>
-				<div>
+				<div className={styles.title}>
 					<motion.h2 variants={h2Variants} transition={{ duration: 0.3 }}>
 						Descopera ce ti-am pregatit!
 					</motion.h2>
@@ -54,6 +76,7 @@ const AdvantagesSection = () => {
 				</div>
 				<motion.ul variants={variants}>
 					<motion.li
+						style={isMounted ? firstItemStyle : {}}
 						variants={liVariants}
 						transition={{ duration: 0.5 }}
 						whileHover={hoverEffect}>
@@ -102,6 +125,7 @@ const AdvantagesSection = () => {
 						</span>
 					</motion.li>
 					<motion.li
+						style={isMounted ? lastItemStyle : {}}
 						variants={liVariants}
 						transition={{ duration: 0.3 }}
 						whileHover={hoverEffect}>

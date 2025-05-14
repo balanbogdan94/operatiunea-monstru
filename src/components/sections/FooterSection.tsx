@@ -15,7 +15,7 @@ import Link from 'next/link';
 
 export default function Footer() {
 	return (
-		<div className={styles.footerSection}>
+		<footer className={styles.footerSection}>
 			<div className={styles.waveContainer}>
 				<svg
 					width='100%'
@@ -176,6 +176,6 @@ export default function Footer() {
 					</div>
 				</div>
 			</footer>
-		</div>
+		</footer>
 	);
 }

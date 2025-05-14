@@ -135,16 +135,10 @@
 .formGroup input,
 .formGroup textarea {
 	padding: 10px;
-	border: px solid var(--color-primary); /* Complementary color */
+	border: 1px solid; /* Complementary color */
 	border-radius: 5px;
 	font-size: 16px;
 	background: var(--color-secondary); /* Light background color */
-}
-
-.formGroup input:focus,
-.formGroup textarea:focus {
-	border-color: #a6febe; /* Complementary focus color */
-	outline: none;
 }
 
 .submitButton {
@@ -199,7 +193,6 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: var(--spacing-l);
 	gap: var(--spacing-s);
 }
 
@@ -215,8 +208,8 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto auto auto auto;
 		padding: 20px 94px;
+		row-gap: 60px;
 		grid-template-areas:
-			'wave wave'
 			'title title'
 			'map contactDetails'
 			'contactForm contactForm';
@@ -241,13 +234,30 @@
 		width: 100%;
 		height: 100%;
 		justify-self: flex-end;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		backdrop-filter: blur(13.5px);
+		-webkit-backdrop-filter: blur(13.5px);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		margin-top: 0;
 	}
 
 	.contactActions {
 		grid-area: contactDetails;
+		background-color: rgb(161, 196, 253, 0.15);
+		padding: var(--spacing-l);
+		border-radius: 10px;
+		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+		animation: boxShadow 2s infinite ease-in-out;
+		backdrop-filter: blur(13.5px);
+		-webkit-backdrop-filter: blur(13.5px);
+		border: 1px solid rgba(255, 255, 255, 0.18);
+		height: 100%;
+		margin-top: 0;
 	}
 
-	.contactItem span {
+	.contactItem h4 {
 		font-size: 18px;
 		font-weight: 500;
 	}
@@ -285,6 +295,7 @@
 		align-items: center;
 		flex-direction: column;
 		margin-top: var(--spacing-xxl);
+		gap: var(--spacing-l);
 	}
 
 	.contactFormWrapper h3 {
@@ -297,5 +308,18 @@
 		width: 100%;
 		max-width: 800px;
 		gap: var(--spacing-xxl);
+	}
+
+	.contactTitle {
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-s);
+	}
+	.contactTitle h3 {
+		margin-bottom: 0;
+	}
+	.contactTitle p {
+		max-width: 50vw;
+		text-wrap: balance;
 	}
 }

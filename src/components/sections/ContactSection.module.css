@@ -78,10 +78,10 @@
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-primary);
-	padding: var(--spacing-s);
+
 	border-radius: 100%;
 	aspect-ratio: 1/1;
-	height: 24px;
+	height: 48px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -174,17 +174,42 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	height: auto;
+	height: 400px; /* Fixed height for consistency */
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+	backdrop-filter: blur(13.5px);
+	-webkit-backdrop-filter: blur(13.5px);
+	border: 1px solid rgba(255, 255, 255, 0.18);
+	margin-top: 0;
+	position: relative;
+}
+
+.mapIframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 .contactHours {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	align-items: flex-start;
+	justify-content: center;
 	gap: var(--spacing-s);
 	margin-top: var(--spacing-l);
 	width: 100%;
+	color: var(--color-primary);
+}
+
+.contactHours h4 {
+	font-size: 24px;
+	font-weight: 600;
 }
 
 .hours {
@@ -194,11 +219,6 @@
 	align-items: center;
 	width: 100%;
 	gap: var(--spacing-s);
-}
-
-.hours b {
-	font-weight: 500;
-	color: var(--color-secondary);
 }
 
 @media (min-width: 768px) {
@@ -234,13 +254,7 @@
 		width: 100%;
 		height: 100%;
 		justify-self: flex-end;
-		border-radius: 10px;
-		overflow: hidden;
-		box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-		backdrop-filter: blur(13.5px);
-		-webkit-backdrop-filter: blur(13.5px);
-		border: 1px solid rgba(255, 255, 255, 0.18);
-		margin-top: 0;
+		min-height: 400px; /* Ensure consistent height on desktop too */
 	}
 
 	.contactActions {
@@ -283,8 +297,6 @@
 	.hours {
 		align-items: flex-start;
 		border: unset;
-		width: 100%;
-		color: var(--color-primary);
 	}
 
 	.contactFormWrapper {

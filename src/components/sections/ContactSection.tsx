@@ -20,7 +20,6 @@ const ContactSection = () => {
 	};
 
 	const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-		event.preventDefault();
 		const targetUrl = event.currentTarget.href;
 		appInsights.trackEvent({
 			name: 'ContactLinkClick',

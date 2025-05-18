@@ -16,6 +16,7 @@ jobs:
     name: Build and Deploy Job
     env:
       NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
+      NEXT_PUBLIC_AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY: ${{ secrets.AZURE_APP_INSIGHTS_INSTRUMENTATION_KEY }}
     steps:
       - uses: actions/checkout@v3
         with:

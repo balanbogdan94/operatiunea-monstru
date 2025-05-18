@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './../styles/globals.css';
 import { alfaSlabOne, montserrat } from '@/styles/fonts';
 import { PropsWithChildren } from 'react';
+import { PageViewTracker } from '@/components/common/PageViewTracker';
 
 export const metadata: Metadata = {
 	title: 'Operatiunea Monstru',
@@ -13,6 +14,7 @@ const RootLayout: React.FC<PropsWithChildren> = ({ children }) => {
 		<html lang='en'>
 			<body className={`${montserrat.variable} ${alfaSlabOne.variable}`}>
 				{children}
+				<PageViewTracker />
 			</body>
 		</html>
 	);

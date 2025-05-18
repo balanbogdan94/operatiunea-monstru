@@ -9,6 +9,7 @@ import {
 	faLocationDot,
 } from '@fortawesome/free-solid-svg-icons';
 import { useDeviceBasedMapLocation } from '@/hooks/useDeviceBasedMapLocation';
+import appInsights from '@/analytics/appInsights';
 
 const ContactSection = () => {
 	const { mapsUrl } = useDeviceBasedMapLocation();
@@ -16,6 +17,18 @@ const ContactSection = () => {
 	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		console.log('Form submitted');
+	};
+
+	const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+		event.preventDefault();
+		const targetUrl = event.currentTarget.href;
+		appInsights.trackEvent({
+			name: 'ContactLinkClick',
+			properties: {
+				type: event.currentTarget.id,
+				link: targetUrl,
+			},
+		});
 	};
 
 	return (
@@ -32,19 +45,31 @@ const ContactSection = () => {
 			</div>
 			<div className={styles.contactActions}>
 				<h3>Informații de contact</h3>
-				<a className={styles.contactItem} href={mapsUrl}>
+				<a
+					id='Address'
+					onClick={handleLinkClick}
+					className={styles.contactItem}
+					href={mapsUrl}>
 					<div className={styles.contactIcon}>
 						<FontAwesomeIcon icon={faLocationDot} />
 					</div>
 					<span>Aleea Constructorilor Nr. 4</span>
 				</a>
-				<a className={styles.contactItem} href='tel:+40751943516'>
+				<a
+					id='Phone'
+					onClick={handleLinkClick}
+					className={styles.contactItem}
+					href='tel:+40751943516'>
 					<div className={styles.contactIcon}>
 						<FontAwesomeIcon icon={faPhone} />
 					</div>
 					<span>0751 943 516</span>
 				</a>
-				<a className={styles.contactItem} href='mailto:vladtintarean@gmail.com'>
+				<a
+					id='Email'
+					className={styles.contactItem}
+					onClick={handleLinkClick}
+					href='mailto:vladtintarean@gmail.com'>
 					<div className={styles.contactIcon}>
 						<FontAwesomeIcon icon={faEnvelope} />
 					</div>
